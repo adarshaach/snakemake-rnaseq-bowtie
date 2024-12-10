@@ -17,11 +17,19 @@ simulate_reads:
   read_length: 100
   read_number: 100000
   random_freq: 0.01
+  umi_pattern: "NNXNNXNN"
+
 
 cutadapt:
   threep_adapter: "-a ATCGTAGATCGG"
   fivep_adapter: "-A GATGGCGATAGG"
   default: ["-q 10 ", "-m 25 ", "-M 100", "--overlap=5"]
 
+umi_extraction:
+  method: string
+  pattern: "NNXNNXNN"
+
 multiqc:
   config: "config/multiqc_config.yml"
+
+umi_dedup: ["--edit-distance-threshold=0", "--read-length"]

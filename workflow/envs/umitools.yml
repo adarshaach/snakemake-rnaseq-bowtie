@@ -1,0 +1,12 @@
+name: umitools
+channels:
+  - conda-forge
+  - bioconda
+dependencies:
+  - umi_tools=1.1.5
+  - samtools=1.11
+  - python=3.9
+  - bwa
+  - pip
+  - pip:
+    - snakemake
